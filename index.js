@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const port = 8080//process.env.PORT;
+const port = process.env.PORT;
 
 const name = 'Adedamola Adeyemo';
 const backend = true;
