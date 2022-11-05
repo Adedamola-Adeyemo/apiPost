@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const port = process.env.PORT;
+const port = 8080//process.env.PORT;
 
 const name = 'Adedamola Adeyemo';
 const backend = true;
@@ -15,9 +15,11 @@ const bio = 'Passionate about problem solving';
 
 
 app.post("/", (req, res) => {
-    const { operation, x, y } = req.body;
+    const { operation,x,y } = req.body
 
-    res.send({ "slackUsername": name, "result": x+y, "operation_type": operation.value });
+    const result = x+y;
+
+    res.json({ "slackUsername": name, "result": result, "operation_type": operation });
   }
 );
 
