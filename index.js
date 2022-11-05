@@ -17,7 +17,7 @@ const bio = 'Passionate about problem solving';
 app.post("/", (req, res) => {
     const { operation,x,y } = req.body
 
-    const result = x+y;
+    const result = parseInt(x) + parseInt(y);
 
     res.json({ "slackUsername": name, "result": result, "operation_type": operation });
   }
