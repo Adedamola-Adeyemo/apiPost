@@ -17,25 +17,7 @@ const bio = 'Passionate about problem solving';
 app.post("/", (req, res) => {
     const { operation, x, y } = req.body;
 
-    const operations = {
-        addition:'addition',
-        subtraction: 'subtraction',
-        multiplication:'multiplication'
-
-    }
-
-    let result;
-    if (operation === operations.addition){
-        result = x + y;
-    }
-    else if (operation === operations.subtraction){
-        result = x - y;
-    }
-    else{
-        result = x * y;
-    }
-
-    res.send({ "slackUsername": name, "result": result, "operation_type": operation.value });
+    res.send({ "slackUsername": name, "result": x+y, "operation_type": operation.value });
   }
 );
 
